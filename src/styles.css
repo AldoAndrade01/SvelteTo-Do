@@ -209,17 +209,51 @@ li:hover {
 
 li.completed {
   opacity: 0.7;
+  background-color: #2a2a2a;
+  border-left: 3px solid #4caf50;
 }
 
 li.completed span {
   text-decoration: line-through;
   color: #888;
+  position: relative;
 }
 
+li.completed span::after {
+  content: " ✓";
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Elimina esta duplicación */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4caf50;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #4caf50;
+}
+
+/* Y modifica esta sección para que quede así */
 .task-content {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #4caf50;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #4caf50;
 }
 
 input[type="checkbox"] {
@@ -414,4 +448,43 @@ input[type="checkbox"] {
   h1 {
     text-align: center;
   }
+}
+
+.complete-btn {
+  background-color: transparent;
+  border: 1px solid #555;
+  color: #ccc;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.completed .complete-btn {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.complete-btn:hover {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.completed .complete-btn:hover {
+  background-color: #3d8b40;
+}
+
+/* Ocultar el checkbox original pero mantener su funcionalidad */
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }

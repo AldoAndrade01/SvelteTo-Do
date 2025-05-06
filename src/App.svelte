@@ -34,7 +34,17 @@
   }
 
   function toggleDone(id) {
-    tasks = tasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
+    tasks = tasks.map(task => 
+      task.id === id 
+        ? { ...task, done: !task.done } 
+        : task
+    );
+    
+    // Forzar actualización reactiva
+    tasks = [...tasks];
+    
+    // Guardar en localStorage
+    localStorage.setItem('svelte-todo-tasks', JSON.stringify(tasks));
   }
 
   function selectTask(task) {
@@ -120,6 +130,12 @@
                   bind:checked={task.done}
                   on:change={() => toggleDone(task.id)}
                 />
+                <button 
+                  class="complete-btn" 
+                  on:click={() => toggleDone(task.id)}
+                >
+                  {task.done ? '✓' : '○'}
+                </button>
                 <span>{task.text}</span>
               </div>
               <button class="delete-btn" on:click={() => removeTask(task.id)}>Eliminar</button>
@@ -160,6 +176,12 @@
                       bind:checked={task.done}
                       on:change={() => toggleDone(task.id)}
                     />
+                    <button 
+                      class="complete-btn" 
+                      on:click={() => toggleDone(task.id)}
+                    >
+                      {task.done ? '✓' : '○'}
+                    </button>
                     <span>{task.text}</span>
                   </div>
                   {#if task.note}
