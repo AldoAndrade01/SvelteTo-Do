@@ -16,6 +16,8 @@ main {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Estilos del encabezado */
@@ -24,15 +26,28 @@ main {
   padding: 15px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   width: 100%;
+  margin: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .header-content {
-  max-width: 1200px;
+  width: 95%;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.main-nav {
+  display: flex;
+  gap: 10px;
+  margin-right: 30px;
 }
 
 .main-nav button {
@@ -40,10 +55,22 @@ main {
   color: #ccc;
   border: 1px solid #555;
   padding: 8px 16px;
-  margin-left: 10px;
+  margin-left: 0;
   border-radius: 4px;
   font-size: 1rem;
   transition: all 0.2s;
+}
+
+/* También podemos ajustar el padding del header-content para dar más espacio */
+.header-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 30px; /* Aumentamos el padding derecho a 40px */
+  box-sizing: border-box;
 }
 
 .main-nav button:hover {
@@ -60,7 +87,7 @@ main {
 /* Contenedor principal */
 .app-container {
   flex: 1;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
   margin: 30px auto;
   background-color: #2d2d2d;
@@ -330,16 +357,24 @@ input[type="checkbox"] {
   background-color: #222;
   padding: 15px 0;
   margin-top: 30px;
-  width: 100%;
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .footer-content {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
   color: #888;
   font-size: 0.9rem;
-  padding: 0 20px;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 /* Animación para el título */
