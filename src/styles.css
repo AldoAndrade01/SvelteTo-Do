@@ -1,0 +1,382 @@
+/* Estilos globales */
+:global(body) {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Estructura principal */
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos del encabezado */
+.app-header {
+  background-color: #222;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.main-nav button {
+  background-color: transparent;
+  color: #ccc;
+  border: 1px solid #555;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.main-nav button:hover {
+  border-color: #ff8c00;
+  color: #ff8c00;
+}
+
+.main-nav button.active {
+  background-color: #ff8c00;
+  border-color: #ff8c00;
+  color: #fff;
+}
+
+/* Contenedor principal */
+.app-container {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 30px auto;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section-container {
+  width: 100%;
+}
+
+/* Tipografía */
+h1 {
+  color: #ff8c00;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+h2 {
+  color: #ff8c00;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  color: #e0e0e0;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Formulario de entrada */
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background-color: #3d3d3d;
+  color: #e0e0e0;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+  color: #888;
+}
+
+.add-btn {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 0 5px 5px 0;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #ff9d2f;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.filters button {
+  background-color: transparent;
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.filters button:hover {
+  border-color: #ff8c00;
+  color: #ff8c00;
+}
+
+.filters button.active {
+  background-color: #ff8c00;
+  border-color: #ff8c00;
+  color: #fff;
+}
+
+/* Lista de tareas */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #3d3d3d;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+li:hover {
+  background-color: #444;
+}
+
+li.completed {
+  opacity: 0.7;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff8c00;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: #ff5252;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 15px 0;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  background-color: transparent;
+  color: #ff8c00;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.clear-btn:hover {
+  opacity: 1;
+}
+
+/* Estilos para la sección de notas */
+.notes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.tasks-list {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.note-editor {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.tasks-list li {
+  cursor: pointer;
+}
+
+.tasks-list li.selected {
+  background-color: #4a4a4a;
+  border-left: 3px solid #ff8c00;
+}
+
+.note-indicator {
+  margin-left: 10px;
+  color: #ff8c00;
+}
+
+.note-area textarea {
+  width: 100%;
+  background-color: #3d3d3d;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.save-btn {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+  background-color: #ff9d2f;
+}
+
+.select-message {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.edit-task {
+  margin-bottom: 20px;
+}
+
+.edit-task input {
+  width: 100%;
+  padding: 10px;
+  background-color: #3d3d3d;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el footer */
+.app-footer {
+  background-color: #222;
+  padding: 15px 0;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  padding: 0 20px;
+}
+
+/* Animación para el título */
+.animated-title {
+  display: inline-block;
+  color: #ff8c00;
+  margin: 0;
+  font-size: 1.8rem;
+  animation: titlePulse 2s infinite alternate;
+  transition: transform 0.3s ease;
+}
+
+.animated-title:hover {
+  transform: scale(1.05);
+}
+
+@keyframes titlePulse {
+  from {
+    text-shadow: 0 0 5px rgba(255, 140, 0, 0.2);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 140, 0, 0.6);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .notes-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+}
